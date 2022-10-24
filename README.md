@@ -38,3 +38,6 @@ Then you must see the live changes in your microapps:
 1. The first app `source` deals with creating APIs, keeping list of created APIs, generating data.
 2. The second app `exchanger` deals with charging data, sending data, keeping sent data, editing data.
 3. The last app `destination` display accessed/recieved data, keeping data, and completing the circle.
+
+Note:
+I have also connected this app to AWS DynamoDB.
