@@ -11,7 +11,7 @@ export class AppService {
     @Inject('GET_CASH_SERVICE') private readonly sourceClient: ClientKafka //GET_CASH_SERVICE is already registered in App.module.ts
   ){}
   getHello(): string {
-    return 'Hello World!';
+    return 'OK';
   }
   createOrder({userId, price}: CreateOrderRequest) {
     console.log(userId+" has been created successfully.")

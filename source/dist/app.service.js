@@ -22,7 +22,7 @@ let AppService = class AppService {
         this.sourceClient = sourceClient;
     }
     getHello() {
-        return 'Hello World!';
+        return 'OK';
     }
     createOrder({ userId, price }) {
         console.log(userId + " has been created successfully.");
