@@ -12,7 +12,7 @@ export class AppController {
   }
 
   @MessagePattern('order_subscribed')
-  getUser(data: any){
-    return this.appService.getUserData(data)
+  getUser(data: any) {
+    return this.appService.getUserData(data);
   }
 }

@@ -17,9 +17,9 @@ export class AppService {
   getHello(): string {
     return 'Hello World!';
   }
- 
+
   getUserData(getUserRequest: GetUserRequest) {
-    console.log(`Added ID#: ${getUserRequest.userId}`)
+    console.log(`Added ID#: ${getUserRequest.userId}`);
     return this.users.find((user) => user.userId === getUserRequest.userId);
   }
 }

@@ -1,4 +1,5 @@
 import { Module } from '@nestjs/common';
+import { ConfigModule } from '@nestjs/config';
 import { ClientsModule, Transport } from '@nestjs/microservices';
 import { MongooseModule } from '@nestjs/mongoose';
 import { AppController } from './app.controller';
@@ -26,6 +27,9 @@ import { UserModule } from './user/user.module';
     ]),
     UserModule,
     MongooseModule.forRoot('mongodb://localhost:27017/nestjs'),
+    ConfigModule.forRoot({
+      isGlobal: true
+    })
   ], 
   controllers: [AppController, FinanceController, ],
   providers: [AppService, FinanceService, ],

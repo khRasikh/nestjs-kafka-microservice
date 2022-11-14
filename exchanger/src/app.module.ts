@@ -4,6 +4,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ExchangerFinanceController } from './finance/exfinance.controller';
 import { exchangeFinanceService } from './finance/exfinance.service';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
   imports: [
@@ -22,6 +23,7 @@ import { exchangeFinanceService } from './finance/exfinance.service';
         },
       },
     ]),
+    ConfigModule.forRoot(),
   ],
   controllers: [AppController, ExchangerFinanceController],
   providers: [AppService, exchangeFinanceService],

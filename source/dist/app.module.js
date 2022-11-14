@@ -8,6 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AppModule = void 0;
 const common_1 = require("@nestjs/common");
+const config_1 = require("@nestjs/config");
 const microservices_1 = require("@nestjs/microservices");
 const mongoose_1 = require("@nestjs/mongoose");
 const app_controller_1 = require("./app.controller");
@@ -37,6 +38,9 @@ AppModule = __decorate([
             ]),
             user_module_1.UserModule,
             mongoose_1.MongooseModule.forRoot('mongodb://localhost:27017/nestjs'),
+            config_1.ConfigModule.forRoot({
+                isGlobal: true
+            })
         ],
         controllers: [app_controller_1.AppController, finance_controller_1.FinanceController,],
         providers: [app_service_1.AppService, finance_service_1.FinanceService,],

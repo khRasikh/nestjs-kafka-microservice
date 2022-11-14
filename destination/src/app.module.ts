@@ -3,26 +3,27 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { DestinationFinanceController } from './finance/desfinance.controller';
-import { DestinationFinanceService } from './finance/desfinance.service'; 
+import { DestinationFinanceService } from './finance/desfinance.service';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
   imports: [
     ClientsModule.register([
-    {
-      name: 'DESTINATION_SERVICE',
-      transport: Transport.KAFKA,
-      options: {
-        client: {
-          clientId: 'destination',
-          brokers: ['localhost:9092'],
+      {
+        name: 'DESTINATION_SERVICE',
+        transport: Transport.KAFKA,
+        options: {
+          client: {
+            clientId: 'destination',
+            brokers: ['localhost:9092'],
+          },
+          consumer: {
+            groupId: 'destination-consumer',
+          },
         },
-        consumer: {
-          groupId: 'destination-consumer'
-        }
-      }
-    },
-  ]), 
-  
+      },
+    ]),
+    ConfigModule.forRoot(),
   ],
   controllers: [AppController, DestinationFinanceController],
   providers: [AppService, DestinationFinanceService],

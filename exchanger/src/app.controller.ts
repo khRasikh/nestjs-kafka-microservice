@@ -3,10 +3,10 @@ import { ClientKafka, EventPattern } from '@nestjs/microservices';
 import { AppService } from './app.service';
 
 @Controller()
-export class AppController implements OnModuleInit{
+export class AppController implements OnModuleInit {
   constructor(
     private readonly appService: AppService,
-    @Inject('EXCHANGER_SERVICE') private readonly authClient: ClientKafka
+    @Inject('EXCHANGER_SERVICE') private readonly authClient: ClientKafka,
   ) {}
 
   @Get()
@@ -15,12 +15,11 @@ export class AppController implements OnModuleInit{
   }
 
   @EventPattern('order_created')
-  handleOrderCreated(data: any){
-  //  return this.appService.handleOrderCreated(data.value)
-   return this.appService.handleOrderCreated(data)
+  handleOrderCreated(data: any) {
+    //  return this.appService.handleOrderCreated(data.value)
+    return this.appService.handleOrderCreated(data);
   }
   onModuleInit() {
-    this.authClient.subscribeToResponseOf('order_subscribed')
+    this.authClient.subscribeToResponseOf('order_subscribed');
   }
-
 }

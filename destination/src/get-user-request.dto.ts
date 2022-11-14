@@ -1,9 +1,9 @@
 export class GetUserRequest {
-    constructor( public readonly userId: number){}
+  constructor(public readonly userId: number) {}
 
-    toString(){
-        return JSON.stringify({
-            userId: this.userId
-        })
-    }
+  toString() {
+    return JSON.stringify({
+      userId: this.userId,
+    });
+  }
 }
