@@ -95,7 +95,6 @@ describe("AppController", () => {
         .fn()
         .mockResolvedValueOnce("first call")
         // .mockRejectedValueOnce(new Error("Async error message"));
-      console.log(asyncMock)
        asyncMock(); // 'first call'
        asyncMock(); // throws 'Async error message'
     });
