@@ -73,7 +73,7 @@ describe("AppController", () => {
   };
   describe("Jest Object focusing on SpyOn method", () => {
     it("should return true", () => {
-      const spy = jest.spyOn(video, "play")
+      const spy = jest.spyOn(video, "play");
       const isPlaying = video.play();
       expect(spy).toHaveBeenCalled();
       expect(isPlaying).toBe(true);
@@ -89,14 +89,12 @@ describe("AppController", () => {
     });
   });
 
-  describe("jest should return 200, 500, and 400",  () => {
-    it("should return 500",  () => {
-      const asyncMock = jest
-        .fn()
-        .mockResolvedValueOnce("first call")
-        // .mockRejectedValueOnce(new Error("Async error message"));
-       asyncMock(); // 'first call'
-       asyncMock(); // throws 'Async error message'
+  describe("jest should return 200, 500, and 400", () => {
+    it("should return 500", () => {
+      const asyncMock = jest.fn().mockResolvedValueOnce("first call");
+      // .mockRejectedValueOnce(new Error("Async error message"));
+      asyncMock(); // 'first call'
+      asyncMock(); // throws 'Async error message'
     });
   });
 });
