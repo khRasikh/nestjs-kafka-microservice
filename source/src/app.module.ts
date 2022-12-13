@@ -26,7 +26,7 @@ import { UserModule } from './user/user.module';
       },
     ]),
     UserModule,
-    MongooseModule.forRoot('mongodb://localhost:27017/nestjs'),
+    MongooseModule.forRoot('mongodb+srv://cluster0.q7uemvh.mongodb.net/nestjsmicroservice'),
     ConfigModule.forRoot({
       isGlobal: true
     })
