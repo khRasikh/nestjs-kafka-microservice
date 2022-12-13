@@ -1,9 +1,24 @@
-export class CreateFinanceRequest{
-     unique_id: number; 
-     source_full_name: string; 
-     destination_full_name: string; 
-     bank_name: string; 
-     transfer_id: string; 
-     amount: number; 
-     currency: string; 
+import { ApiProperty } from "@nestjs/swagger";
+
+export class CreateFinanceRequest {
+  @ApiProperty()
+  unique_id: number;
+
+  @ApiProperty()
+  source_full_name: string;
+
+  @ApiProperty()
+  destination_full_name: string;
+
+  @ApiProperty()
+  bank_name: string;
+
+  @ApiProperty()
+  transfer_id: string;
+
+  @ApiProperty()
+  amount: number;
+
+  @ApiProperty()
+  currency: string;
 }

@@ -1,7 +1,18 @@
+import { ApiProperty } from "@nestjs/swagger";
+
 export class addUserRequestInFinance {
-    id: number; 
-    name: string; 
-    phone: string;
-    payment: boolean;  
-    date: string; 
+  @ApiProperty()
+  id: number;
+
+  @ApiProperty()
+  name: string;
+
+  @ApiProperty()
+  phone: string;
+
+  @ApiProperty()
+  payment_status: boolean;
+
+  @ApiProperty()
+  date: string;
 }
