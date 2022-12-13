@@ -1,18 +1,23 @@
-import { ApiProperty } from "@nestjs/swagger";
+import { ApiProperty, ApiPropertyOptional } from "@nestjs/swagger";
+import { IsNotEmpty, IsPhoneNumber } from "class-validator";
 
 export class addUserRequestInFinance {
   @ApiProperty()
+  @IsNotEmpty()
   id: number;
 
   @ApiProperty()
+  @IsNotEmpty()
   name: string;
 
-  @ApiProperty()
+  @ApiPropertyOptional()
+  @IsPhoneNumber()
   phone: string;
 
-  @ApiProperty()
+  @ApiProperty({ default: false })
+  @IsNotEmpty()
   payment_status: boolean;
 
-  @ApiProperty()
+  @ApiPropertyOptional({ default: new Date()})
   date: string;
 }
